@@ -1,9 +1,18 @@
+/* 
+ * https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edf/0000000000050e1d
+ * 
+ * E[0] = Σ Vi / N
+ * E[k] = xk * E[k - 1] / N + Σi > xk Vi / N
+ *
+ * Complexity : O(N + N log N + K log N) = O((N + K) log N) 
+ */
+
 #include <iostream>
 #include <vector>
 #include <math.h>
 #include <algorithm>
 
-using namespace std;
+                                                      using namespace std;
 
 double luckyDip(vector<int> &v, int n, int K)
 {

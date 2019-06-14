@@ -1,3 +1,8 @@
+/* 
+ * https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edf/0000000000051004
+ * Complexity : O(N √M).
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
