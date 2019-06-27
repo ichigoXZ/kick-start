@@ -46,6 +46,7 @@ int paragliding(vector<vector<int>>& PHXY, int N, int K)
     return num;
 }
 
+// N + K + NlongN + KlogK + N + K
 typedef pair<int,int> coordinate;
 int paraglidingTrans(vector<vector<int>>& PHXY, int N, int K) {
     vector<coordinate> ph;
