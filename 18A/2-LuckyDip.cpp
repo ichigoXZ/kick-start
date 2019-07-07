@@ -12,7 +12,7 @@
 #include <math.h>
 #include <algorithm>
 
-                                                      using namespace std;
+using namespace std;
 
 double luckyDip(vector<int> &v, int n, int K)
 {
