@@ -60,6 +60,26 @@ void dfs(TrieNode *node, long long &nums, int N) {
         dfs(node->B, nums, N);
 }
 
+long long solve(int N, int P, vector<string>& forbidden) {
+    set<string> seen;
+    long long ans = 1LL << N;
+    sort(forbidden.begin(), forbidden.end());
+    for (string s : forbidden) {
+        bool ignore = false;
+        for (int len = 1; len <= s.length(); len++) {
+            if (seen.find(s.substr(0, len)) != seen.end()) {
+                ignore = true;
+                break;
+            }
+        }
+        if (ignore)
+            continue;
+        ans -= 1LL << (N - s.length());
+        seen.insert(s);
+    }
+    return ans;
+}
+
 int main()
 {
     int T;
@@ -68,15 +88,18 @@ int main()
     {
         int N, P;
         cin >> N >> P;
-        TrieNode* root = new TrieNode(0);
+        vector<string> forbidden;
+        // TrieNode* root = new TrieNode(0);
         for (int k = 0; k < P; k++) {
             string s;
             cin >> s;
-            add(root, s);
+            forbidden.push_back(s);
+            // add(root, s);
         }
-        long long nums = 0;
-        dfs(root, nums, N);
-        long long ans = (1LL << N) - nums;
+        // long long nums = 0;
+        // dfs(root, nums, N);
+        // long long ans = (1LL << N) - nums;
+        long long ans = solve(N, P, forbidden);
         printf("Case #%d: %lld\n", i, ans);
     }
 }
