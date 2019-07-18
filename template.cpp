@@ -28,8 +28,8 @@ int main()
 {
     int T;
     cin >> T;
-    for (int i = 1; i <= T; i++)
+    for (int k = 1; k <= T; k++)
     {
-        printf("Case #%d: \n", i);
+        printf("Case #%d: \n", k);
     }
 }
