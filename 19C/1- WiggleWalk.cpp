@@ -40,11 +40,12 @@ class Solution
 private:
     map<pair<int, int>, int> p2id;
     map<int, pair<int, int>> id2p;
-    int total = 0;
+    int total;
 
 public:
     void init()
     {
+        total = 0;
         p2id.clear();
         id2p.clear();
         west.init();
