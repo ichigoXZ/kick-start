@@ -9,7 +9,17 @@
 #include <bits/stdc++.h>
 #include <cctype>
 
+#define mp make_pair
+#define x first
+#define y second
+#define pb push_back
+#define ALL(x) (x).begin(), (x).end()
+
 using namespace std;
+
+typedef long long LL;
+
+const int N = (int)1e6 + 6, mod = (int)0;
 
 vector<int> generate(int x1, int x2, int A, int B, int C, int M, int N)
 {
