@@ -6,8 +6,9 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <cstring>
-#include <bits/stdc++.h>
 #include <cctype>
+#include <queue>
+#include <stack>
 
 #define mp make_pair
 #define x first
