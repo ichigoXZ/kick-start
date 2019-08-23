@@ -40,13 +40,14 @@ int main()
         // dp[j] : 使用了j秒的最大结果
         int dp[10001];
         memset(dp, 0, sizeof(dp));
-        for (int k = 0; k < N; k++) 
-            for (int j = 10000 - stones[k].S; j >= 0; j--) {
+        for (int k = 0; k < N; k++) {
+            for (int j = 10000; j >= 0; j--) {
                 int cur = stones[k].E - stones[k].L * j;
-                if (cur <= 0)
+                if (cur < 0)
                     continue;
                 dp[j + stones[k].S] = max(dp[j + stones[k].S], dp[j] + cur);
             }
+        }
         int ans = 0;
         for (int j = 0; j <= 10000; j++)
             ans = max(ans, dp[j]);

@@ -19,8 +19,9 @@
 using namespace std;
 
 typedef long long LL;
+typedef unsigned long long ULL;
 
-const int N = (int)1e6 + 6, mod = (int)0;
+const int N = (int)1e6 + 6, mod = (int)1e5, inf = 1e9;
 
 vector<int> generate(int x1, int x2, int A, int B, int C, int M, int N)
 {
