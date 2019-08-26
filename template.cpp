@@ -1,14 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <algorithm>
-#include <set>
-#include <unordered_map>
-#include <unordered_set>
-#include <cstring>
-#include <cctype>
-#include <queue>
-#include <stack>
+#include <bits/stdc++.h>
 
 #define mp make_pair
 #define x first
