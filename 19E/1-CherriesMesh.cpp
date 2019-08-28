@@ -20,27 +20,16 @@ int solve(vector<vector<int>>& black, int n, int m) {
     vector<bool> marked(n+1, false);
     vector<vector<int>> g(n+1);
     int sweet =  0;
-    set<int> canblack;
     for (auto b : black) {
-        if (marked[b[0]] && marked[b[1]])
-            continue;
-        // sweet++;
-        // marked[b[0]] = true;
-        // marked[b[1]] = true;
         g[b[0]].push_back(b[1]);
         g[b[1]].push_back(b[0]);
-        canblack.insert(b[0]);
-        canblack.insert(b[1]);
     }
-    int part = 0;
-    fill(marked.begin(), marked.end(), false);
-    for (int i : canblack) {
-        if (marked[i])
+    for (int i = 0; i < n; i++) {
+        if (g[i].empty() || marked[i])
             continue;
-        part++;
         sweet += dfs(g, i, marked) - 1;
     }
-    sweet += (n - canblack.size() - 1 + part) * 2;
+    sweet += (n - 1 - sweet) * 2;
     return sweet;
 }
 
